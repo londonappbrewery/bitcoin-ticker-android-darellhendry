@@ -97,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(JSONObject response) {
         try {
-            int newCurrency = response.getInt("bid");
-            mPriceTextView.setText("" + newCurrency);
+            String newCurrency = response.getString("last");
+            mPriceTextView.setText(newCurrency);
         } catch (JSONException e) {
             Log.e("Error", e.getMessage());
         }
